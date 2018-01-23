@@ -1,0 +1,53 @@
+<ion-list dir="rtl">
+    <ion-list-header color="info">בחירת טווח סוגי פריט</ion-list-header>
+    <!-- <ion-item>
+        <ion-label>מ- סוג פריט</ion-label>
+        <ion-select [(ngModel)]="fromSelected" cancelText="ביטול" okText="אישור" (click)="getModelTypeList('from')">
+            <ion-option *ngFor="let item of fromModelGroup" [value]="item.KOD_TT_SIVOG" checked="false">{{item.KOD_TT_SIVOG}} {{item.TOR_SIVUG}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>עד סוג פריט</ion-label>
+        <ion-select [(ngModel)]="toSelected" cancelText="ביטול" okText="אישור">
+            <ion-option *ngFor="let item of toModelGroup" [value]="item.KOD_TT_SIVOG" checked="false">{{item.KOD_TT_SIVOG}} {{item.TOR_SIVUG}}</ion-option>
+        </ion-select>
+    </ion-item> -->
+
+    <ion-item>
+        <ion-label>בחירה מרובה</ion-label>
+        <ion-select [(ngModel)]="selectedChkbox" cancelText="ביטול" okText="אישור" multiple="true">
+            <ion-option *ngFor="let item of groupChkBox" [value]="item.KOD_TT_SIVOG" checked="false">{{item.KOD_TT_SIVOG}} {{item.TOR_SIVUG}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label>מתאריך</ion-label>
+        <ion-datetime displayFormat="YYYYMMDD" [(ngModel)]="fromDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>עד תאריך</ion-label>
+        <ion-datetime displayFormat="YYYYMMDD" [(ngModel)]="toDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>שנה</ion-label>
+        <ion-input [(ngModel)]="modelYear"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>עונה</ion-label>
+        <ion-input [(ngModel)]="season"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>מצב פלזמה</ion-label>
+        <ion-checkbox [(ngModel)]="displayMode"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <button ion-button full (click)="saveToStorage()">עדכון</button>
+    </ion-item>
+    <ion-item>
+        <button ion-button full (click)="restoreDefaults()">ברירות מחדל</button>
+    </ion-item>
+</ion-list>

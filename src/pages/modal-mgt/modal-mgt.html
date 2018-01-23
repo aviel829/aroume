@@ -1,0 +1,130 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            נתונים נוספים
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">X
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content dir="rtl">
+    <ion-list *ngFor="let item of modelDetails">
+        <ion-item>
+            <!-- <ion-thumbnail item-start> -->
+            <img item-start src="{{imageBaseUrl+item.MPTACH_DGM}}.jpg">
+            <!-- </ion-thumbnail> -->
+            <ion-item>
+
+                <h2 dir="rtl">{{item.TOR_DGM}}</h2>
+                <p dir="rtl">{{item.MPTACH_DGM}}</p>
+            </ion-item>
+
+            <!--<ion-item *ngFor="let item of modelDetails">-->
+            <ion-item>
+                {{item.SHNA}}
+                <ion-note item-end>
+                    שנה
+                </ion-note>
+            </ion-item>
+
+            <ion-item>
+                {{item.ONA}}
+                <ion-note item-end>
+                    עונה
+                </ion-note>
+            </ion-item>
+
+            <ion-item>
+                {{item.KMOT_PRITIM}}
+                <ion-note item-end>
+                    נמכרו
+                </ion-note>
+            </ion-item>
+
+            <ion-item>
+                {{item.DESINER}}
+                <ion-note item-end>
+                    מעצב/ת
+                </ion-note>
+            </ion-item>
+
+            <ion-item>
+                {{item.MODELIST}}
+                <ion-note item-end>
+                    תדמן/נית
+                </ion-note>
+            </ion-item>
+        </ion-item>
+
+        <ion-item>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <ion-note>
+                            תאור דגם
+                        </ion-note>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-note>
+                            צבע דגם
+                        </ion-note>
+                    </ion-col>
+                    <ion-col col-2>
+                        <ion-note>
+                            מכירות
+                        </ion-note>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let citem of colorDetails">
+                    <ion-col col-6 wrap>
+                        {{citem.TOR_DGM}}
+                    </ion-col>
+                    <ion-col col-4>
+                        {{citem.TSBA}}
+                    </ion-col>
+                    <ion-col col-2>
+                        {{citem.KMOT_PRITIM}}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+        <ion-item>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <ion-note>
+                            תאור דגם
+                        </ion-note>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-note>
+                            מידה
+                        </ion-note>
+                    </ion-col>
+                    <ion-col col-2>
+                        <ion-note>
+                            מכירות
+                        </ion-note>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let citem of SizeDetails">
+                    <ion-col col-6>
+                        {{citem.TOR_DGM}}
+                    </ion-col>
+                    <ion-col col-4>
+                        {{citem.MIDA}}
+                    </ion-col>
+                    <ion-col col-2>
+                        {{citem.KMOT_PRITIM}}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+</ion-content>

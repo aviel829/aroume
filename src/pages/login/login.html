@@ -1,0 +1,44 @@
+<ion-header dir="rtl">
+    <ion-navbar color="primary">
+        <ion-title>
+            כניסה למערכת
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding dir="rtl">
+    <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+        <ion-item>
+            <ion-label stacked>דוא"ל</ion-label>
+            <ion-input #email formControlName="email" type="email" placeholder="נא להזין כתובת דואר אלקטרוני" [class.invalid]="!loginForm.controls.email.valid &&
+            loginForm.controls.email.dirty"></ion-input>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
+        loginForm.controls.email.dirty">
+            <p>נא להזין כתובת דואר חוקית</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>סיסמה</ion-label>
+            <ion-input #password formControlName="password" type="password" placeholder="נא להזין סיסמה" [class.invalid]="!loginForm.controls.password.valid &&
+            loginForm.controls.password.dirty"></ion-input>
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  &&
+        loginForm.controls.password.dirty">
+            <p>הסיסמה חייבת להיות יותר מ 6 תווים</p>
+        </ion-item>
+
+        <button ion-button block type="submit">כניסה</button>
+
+    </form>
+
+    <!-- <button ion-button block clear (click)="goToResetPassword()">
+      I forgot my password 🙁
+    </button> -->
+    <!-- 
+    <button ion-button block clear (click)="createAccount()">
+      Create a new account
+    </button> -->
+
+</ion-content>

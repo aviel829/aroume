@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>הפריטים שלי</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-2 *ngFor="let item of salesData" (click)="openModal({model: item.MPTACH_DGM,prevDays: 30})">
+                <ion-item>
+                    <ion-thumbnail item-start>
+                        <img src="{{imageBaseUrl+ item.MPTACH_DGM}}.jpg" />
+                    </ion-thumbnail>
+                    <h2> {{item.TOR_DGM}}</h2>
+                    <p>{{item.MPTACH_DGM}}</p>
+                    <p>{{item.DEPARTMENT}}</p>
+                    <p> נמכרו: {{item.KMOT_PRITIM}}</p>
+                    <p>שנה: {{item.SHNA}} עונה: {{item.ONA}}</p>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <button ion-button full icon-right (click)="loadMore()">
+            <ion-icon name="load"></ion-icon>
+            טעינת רשומות נוספות
+    </button>
+</ion-content>

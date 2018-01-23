@@ -1,0 +1,107 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button menuToggle ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title> הגדרות </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="settingsPage">
+    <ion-list color="secondary">
+        <ion-list-header>
+            דוח יומי
+        </ion-list-header>
+        <ion-item no-lines>
+            <ion-icon name="calendar" item-end></ion-icon>
+            <ion-label item-start>חודש (2 תווים)</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="mm" item-end></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="calendar" item-end></ion-icon>
+            <ion-label item-start>יום (2 תווים)</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="dd" item-end></ion-input>
+        </ion-item>
+
+        <ion-list-header>
+            דוח שבועי
+        </ion-list-header>
+        <ion-item no-lines>
+            <ion-label>מספר ימים לדוח שבועי</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="weekVal"></ion-input>
+            <!--<ion-toggle color="info">
+        </ion-toggle>-->
+        </ion-item>
+
+        <ion-list-header>
+            דוח חודשי
+        </ion-list-header>
+        <ion-item no-lines>
+            <ion-label>מספר ימים לדוח חודשי</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="monthVal"></ion-input>
+            <!--<ion-toggle color="info">
+        </ion-toggle>-->
+        </ion-item>
+
+        <ion-list-header>
+            טווח סוגי פריט
+        </ion-list-header>
+        <ion-item no-lines>
+            <ion-label>מ- סוג פריט</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="fromModelGrp"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-label>עד- סוג פריט</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="toModelGrp"></ion-input>
+        </ion-item>
+
+        <ion-list-header>
+            טווח תאריכים
+        </ion-list-header>
+        <ion-item no-lines>
+            <ion-label>מ- תאריך</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="fromDate"></ion-input>
+        </ion-item>
+        <ion-item no-lines>
+            <ion-label>עד- תאריך</ion-label>
+            <ion-input type="text" id="txtWeekVal" [(ngModel)]="toDate"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>שנה</ion-label>
+            <ion-input [(ngModel)]="modelYear"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>עונה</ion-label>
+            <ion-input [(ngModel)]="modelSeason"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>סוגי פריט</ion-label>
+            <ion-input [(ngModel)]="selectedChkbox"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>מצב פלזמה</ion-label>
+            <ion-checkbox [(ngModel)]="displayMode"></ion-checkbox>
+        </ion-item>
+        <!--<ion-item>-->
+        <!--<button ion-button color="danger" (click)="clearCache()">נקה מטמון</button>-->
+        <!--</ion-item>-->
+        <!--<ion-item>
+      <ion-label>Notifications for Invites</ion-label>
+      <ion-toggle color="secondary"
+        [ngModel]='preferences[PREF_NOTIFY_INVITES]'
+        (ionChange)='changePreference($event, PREF_NOTIFY_INVITES)'></ion-toggle>
+    </ion-item-->
+        <!--<ion-list-header>
+       Account
+    </ion-list-header>
+    <button ion-item (click)="logout()">
+      Log Out
+    </button>-->
+    </ion-list>
+</ion-content>

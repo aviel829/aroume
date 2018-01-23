@@ -1,0 +1,56 @@
+<ion-menu [content]="content" side="right" dir="rtl">
+    <ion-header>
+        <ion-toolbar>
+            <!--<ion-fab top left egde>-->
+            <!--<ion-icon name="md-close-circle" menuClose></ion-icon>-->
+            <!--</ion-fab>-->
+            <ion-title>תפריט</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p,p.logout)">
+        {{p.title}}
+      </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<!-- <ion-footer> -->
+<!-- <ion-fab bottom left>
+    <button ion-fab mini><ion-icon name="arrow-dropup"></ion-icon></button>
+    <ion-fab-list side="top">
+        <ion-card>
+            <ion-item>
+                <h2>Marty McFly</h2>
+                <p>November 5, 1955</p>
+            </ion-item>
+            <ion-card-content>
+                <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 Likes</div>
+          </button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note>
+                        11h ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+    </ion-fab-list>
+</ion-fab> -->
+<!-- </ion-footer> -->
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]=" rootPage " #content swipeBackEnabled="false "></ion-nav>
